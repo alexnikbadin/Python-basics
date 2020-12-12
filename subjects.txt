@@ -1,0 +1,3 @@
+English: 100(l) 70(pr) 50(lab)
+Maths: 90(l) 60(pr)
+Geographic: 80(l)
