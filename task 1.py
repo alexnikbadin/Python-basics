@@ -1,18 +1,26 @@
-import time
+
+class Matrix:
+    def __init__(self, my_list):
+        self.my_list = my_list
+
+    def __str__(self):
+        return '\n'.join(map(str, self.my_list))
+
+    def __add__(self, other):
+        i = 0
+        return Matrix([x+y for x, y in zip(self.my_list[i], other.my_list[i])])
+#     не смог прикрутить в генератор счетчик i для сложения всех элементов..((
 
 
-class Trafficlights():
+my_matrix = Matrix([[1, 5, 8],
+                    [2, 6, 9],
+                    [3, 99, 7]])
 
-    __color = 0
+my_matrix_2 = Matrix([[34, 87, 90],
+                      [45, 7, 12],
+                      [34, 123, 345]])
 
-    def running (self):
-        print('Red signal')
-        time.sleep(7)
-        print('Yellow signal')
-        time.sleep(2)
-        print('Green signal')
-        time.sleep(5)
-        Trafficlights.__color += 1
 
-a = Trafficlights()
-a.running()
+print(my_matrix.my_list)
+print(my_matrix)
+print(my_matrix + my_matrix_2)
